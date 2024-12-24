@@ -20,31 +20,42 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Snow animation */
+.snow-animation {
+  background: url("/snowflake.png") repeat;
+  animation: snow 10s linear infinite;
+}
 
-@keyframes fall {
+@keyframes snow {
   0% {
-    transform: translateY(-100%);
-    opacity: 1;
+    background-position: 0 0;
   }
   100% {
-    transform: translateY(100%);
-    opacity: 0.5;
+    background-position: 100vw 100vh;
   }
 }
 
-.snowflake {
-  position: absolute;
-  top: -10px;
-  color: white;
-  font-size: 1rem;
-  animation: fall linear infinite;
-  opacity: 0.8;
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
 }
 
-.snow-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
+.fade-in.delay-1 {
+  animation-delay: 5s;
 }
+
+.fade-in.delay-2 {
+  animation-delay: 10s;
+}
+
+.fade-in.delay-3 {
+  animation-delay: 15s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
